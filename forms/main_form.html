@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <title>Form</title>
+</head>
+
+<body>
+    <div class="main">
+        <div class="sub">
+            <form>
+                <div class="special_special_div">
+                    <span>
+                        <label for="name">Full Name</label><br>
+                        <input type="text" placeholder="Enter Your Name" required class="same_class" id="name"><br>
+                    </span><span>
+                        <label for="fname">Father Name</label> <br><br>
+                        <input type="text" placeholder="Enter Your Father Name" required class="same_class"id="father_name">
+                    </span>
+                </div>
+                <div class="special_div">
+                    <span>
+                        <label for="dob">Date of Birth</label><br>
+                        <input type="date" class="same_class" required id="dob"><br>
+                    </span><span>
+                        <label for="number">Mobile Number</label><br>
+                        <input type="number" class="same_class" id="mob_number" required placeholder="92XXXXXXXXXX"><br>
+                    </span>
+                </div>
+                <div class="special_div">
+                    <span>
+                        <label for="CNIC">CNIC Number</label><br>
+                        <input type="text" class="same_class" id="cnic_number" required
+                            placeholder="XXXXX-XXXXXXX-X"><br>
+                    </span><span>
+                        <label for="adress">Address</label><br>
+                        <input type="type" class="same_class" id="address" required placeholder="Home address">
+                    </span>
+                </div>
+                <div class="special_div">
+                    <span>
+                        <label for="gen">Genter</label><br>
+                        <input type="text" class="same_class" id="gender" required placeholder="Enter Your Gender"><br>
+                    </span><span>
+                        <label for="qualifiction">Qualfication</label><br>
+                        <input type="type" class="same_class" id="qualification" required
+                            placeholder="Last Qualificatiion">
+                    </span>
+                </div>
+                <div class="special_div">
+                    <span>
+                        <label for="email">Email</label><br>
+                        <input type="email" class="same_class" id="mail" required placeholder="Enter Your Email"><br>
+                    </span><span>
+                        <label for="photo">Upload Photo</label><br>
+                        <input type="file" class="same_class" required id="photo">
+                    </span>
+                </div>
+                <div class="special_div"><button onclick="get_data()" class="btn_sbmt">Submit</button></div>
+            </form>
+        </div>
+    </div>
+    <script src="app4.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
