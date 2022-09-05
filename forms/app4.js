@@ -7,6 +7,8 @@ var address = document.getElementById("address")
 var gender = document.getElementById("gender")
 var qualification = document.getElementById("qualification")
 var mail = document.getElementById("mail")
+var photo = document.getElementById("photo")
+
 var count = 0
 
 
@@ -14,12 +16,13 @@ var count = 0
 
 
 
-function Check(name,fathername,mob_number,cnic_number,mail){
+function Check(name,fathername,mob_number,cnic_number,mail,photo){
     this.name = name
     this.fathername = fathername
     this.mob_number = mob_number
     this.cnic_number = cnic_number
     this.mail = mail
+    this.photo = photo
 
 }
 function get_data(){
@@ -56,7 +59,7 @@ if( check_mal == false){
 
 if( name_chk == true && father_name_chk_ == true && mob_no_chk_ == true && cnic_check == true && check_mal == true){
     on_ex_page()
-   obj[`ID # ${count + 1}`] = new Check(names.value,father_name.value,mob_number.value,cnic_number.value,mail.value)
+   obj[`ID # ${count + 1}`] = new Check(names.value,father_name.value,mob_number.value,cnic_number.value,mail.value,photo.value)
    localStorage.setItem("data",JSON.stringify(obj))
    count = count+1 ;  
 }
@@ -79,6 +82,15 @@ function on_ex_page(){
     location = "../index.html"
 
 }
+function pelete(){
+    var pe =event.target.parentNode.parentNode.remove();
+
+    // var pe =event.target.parentNode.parentNode..childrenremove();
+    // localStorage.removeItem("data")
+
+    console.log(pe)
+
+}
 
 
 
@@ -92,6 +104,7 @@ show_res.innerHTML += `
   
     <tr>
     <td>${keys}</td>
+    <td><image src="${getting[keys].photo}" ></td>
     <td>
     ${getting[keys].name } 
     </td>
@@ -99,6 +112,9 @@ show_res.innerHTML += `
     <td>${getting[keys].mail}</td>
     <td>${getting[keys].cnic_number}</td>
     <td>${getting[keys].mob_number}</td>
+    <td><button onclick="edit()">edit</button><button onclick="pelete()">delete</button></td>
+
+
     
     </tr>`
     break
