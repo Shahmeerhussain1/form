@@ -70,7 +70,7 @@ if( name_chk == true && father_name_chk_ == true && mob_no_chk_ == true && cnic_
 var getting = JSON.parse(localStorage.getItem("data"))
 if(getting){
     var obj = getting
-    console.log(obj)
+    // console.log(obj)
 }
 else{
     var obj = {}
@@ -83,22 +83,38 @@ function on_ex_page(){
 
 }
 function pelete(){
-    var pe =event.target.parentNode.parentNode.remove();
+    // console.log(getting[1])
+    // var pez =event.target.parentNode.parentNode.children[0].innerText;
+    var pe = JSON.parse( localStorage.getItem("data"))
+
+    // console.log(pe.[0])
+    // console.log(pez)    
+    // console.log(typeof(pez))    
+    // console.log(count)
+
+
 
     // var pe =event.target.parentNode.parentNode..childrenremove();
     // localStorage.removeItem("data")
 
-    console.log(pe)
+    // console.log(pe)
 
 }
 
+function noon(){
+    var xer= event.target.parentNode.parentNode.children[0].innerHTML
+    return xer;
+    console.log(xer)
+}
 
 
 var show_res = document.getElementById("show_res");
+// for ( var i = 0 ;i<getting.length ;i++){}
 for(var keys in getting){
     console.log(getting[keys])
 for(var key2 in getting[keys]){
-    
+    var i = keys.length =1
+    console.log(keys.length)
 show_res.innerHTML += `
     
   
@@ -112,7 +128,7 @@ show_res.innerHTML += `
     <td>${getting[keys].mail}</td>
     <td>${getting[keys].cnic_number}</td>
     <td>${getting[keys].mob_number}</td>
-    <td><button onclick="edit()">edit</button><button onclick="pelete()">delete</button></td>
+    <td><button onclick="noon()">edit</button><button onclick="pelete(${i})">delete</button></td>
 
 
     
